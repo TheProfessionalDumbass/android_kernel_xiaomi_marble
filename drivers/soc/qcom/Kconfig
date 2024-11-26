@@ -1178,6 +1178,7 @@ config QCOM_HUNG_TASK_ENH
 
 config QCOM_SMCINVOKE
 	tristate "Secure QSEE Support"
+	depends on QCOM_SCM && QCOM_MEM_BUF
 	help
 	 Enable SMCInvoke driver which supports capability based secure
 	 communication between QTI Secure Execution Environment (QSEE)
@@ -1281,6 +1282,10 @@ config QTI_OEMVM_CORE_CTL
 	  mapping information is recorded when OEMVM bootup. The driver provides
 	  API for user to migrate vCPU to current pCPU then yield on current
 	  pCPU. User can also recover vCPU mapping after work is done.
+
+config VH_FS
+	tristate "Vendor hooks for filesystem"
+	default m
 
 source "drivers/soc/qcom/icnss2/Kconfig"
 source "drivers/soc/qcom/sync_fence/Kconfig"
