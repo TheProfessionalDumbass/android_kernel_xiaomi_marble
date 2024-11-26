@@ -20,7 +20,7 @@ jobs:
         NAME: android_kernel_xiaomi_marble
       with:
         arch: arm64
-        compiler: clang
+        compiler: gcc
         defconfig: marble_defconfig
         image: Image.gz-dtb
 
